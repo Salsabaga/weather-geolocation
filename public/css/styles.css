@@ -1,0 +1,153 @@
+:root {
+	--primary-color: #EFFCEF;
+	--secondary-color: #CCEDD2;
+	--card-color: #94D3AC;
+	--nav-bar: #655C56;
+	font-family: "Lato", sans-serif;
+}
+
+body{
+	margin: 0;
+	padding: 0;
+}
+
+header{
+	background-color: var(--nav-bar);
+	margin: 0;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 5px 0;
+}
+
+.nav-links{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.nav-links li a{
+	padding: 25px 40px;
+	height: 100%;
+	color: #f7f3e9;
+	text-decoration: none;
+	font-weight: 400;
+	font-size: 1em;
+	transition: all 400ms ease-in-out;
+}
+
+li{
+	list-style-type: none;
+}
+
+a:visited, a:active{
+	color: none;
+}
+
+.nav-links li a:hover{
+	background-color: var(--primary-color);
+}
+
+li:hover > a{
+	color: var(--nav-bar);
+}
+
+#search-style{
+	margin-left: auto;
+	padding-right: 2em;
+}
+
+input[type="search"] {
+	padding: 10px 2.5px;
+	text-align: center;
+	font-size: 1em;
+	border-radius: 20px;
+	border: none;
+}
+
+input[type="search"]:focus,
+input[type="search"]:active {
+	outline: none;
+}
+
+input[type="search"]::-webkit-search-cancel-button{
+	position: relative;
+	right: 10px;
+	-webkit-appearance: none;
+	height: 10px;
+	width: 10px;
+	border: 10px;
+	background-image: url("../svg/cross-clear.svg");
+	background-size: contain;
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+#btn {
+	border: none;
+	background-color: var(--secondary-color);
+	border-radius: 20px;
+	cursor: pointer;
+	padding: 10px 25px;
+	margin-left: 25px;
+}
+
+
+#location-wrapper {
+	background-color: var(--primary-color);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 4em;
+}
+
+#weather-wrapper {
+	display: flex;
+	flex-wrap: nowrap;
+	overflow-x: auto;
+	background-color: var(--secondary-color);
+	height: 100%;
+}
+
+
+
+.weather {
+	margin: 50px 25px;
+	padding: 1em 4em;
+	border: 2px solid #ffffff;
+	text-align: center;
+	background-color: var(--card-color);
+	transition: all 300ms ease-in-out;
+	border-radius: 20px;
+}
+
+.weather > p {
+	color: white;
+}
+
+.weather > p > span {
+	font-weight: 700;
+	font-size: 2em;
+}
+
+.weather:hover {
+	transform: scale(1.1);
+}
+
+.city-text{
+	font-size: 4em;
+	font-weight: 600;
+}
+
+.date-time {
+	font-weight: 500;
+	font-size: 2em;
+}
+
+#error-title{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: auto 0;
+}

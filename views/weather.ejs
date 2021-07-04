@@ -1,0 +1,36 @@
+<%- include('header') %> 
+
+		<div id="container">
+			<div id="location-wrapper">
+				<p class="city-text">
+					<%= data['city']['name'] %>, <%=data['city']['country']%>
+				</p>
+				<div id="sun-times">
+					<p class="date-time">Sunrise: <span><%= timeConverter(data['city']['sunrise']) %></span></p>
+					<p class="date-time">Sunset: <span><%= timeConverter(data['city']['sunset']) %></span></p>
+				</div>
+
+			</div>
+			<div id="weather-wrapper">
+				<% for(let i = 0; i < data['list'].length - 25; i++) { %>
+				<div class="weather">
+					<p><%=timeConverter(data['list'][i]['dt'])%></p>
+					<p><%=dateConverter(data['list'][i]['dt'])%></p>
+					<img
+						src="http://openweathermap.org/img/wn/<%=data['list'][i].weather[0].icon%>@2x.png"
+					/>
+					<% data['list'][i].weather[0].description =
+					data['list'][i].weather[0].description.charAt(0).toUpperCase() +
+					data['list'][i].weather[0].description.slice(1) %>
+					<p class="date-time">
+						<span><%=Math.round(data['list'][i].main.temp)%>&degC</span>
+					</p>
+					<p><%=data['list'][i].weather[0].description%></p>
+					<p>Wind: <span><%=data['list'][i].wind.speed%>m/s</span></p>
+					<p>Cloudiness: <span><%=data['list'][i].clouds.all%>%</span></p>
+				</div>
+				<% }; %>
+			</div>
+		</div>
+	</body>
+</html>
